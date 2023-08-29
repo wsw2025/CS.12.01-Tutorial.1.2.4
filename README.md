@@ -2,34 +2,6 @@
 
 This question involves the WordMatch class, which stores a secret string and provides methods that compare other strings to the secret string. You will write two methods in the WordMatch class. 
 
-public class WordMatch 
-{ 
-
-/**The secret string.*/ 
-private String secret; 
-
-/**Constructs a WordMatch object with the given secret string of lowercase letters.*/ 
-public WordMatch(String word) 
-{ 
-/*implementation not shown*/ 
-} 
-
-/**Returns a score for guess, as described in part(a). 
- *Precondition: 0 < guess.length() <= secret.length() 
- */ 
-public int scoreGuess(String guess) 
-{ /*to be implemented in part(a)*/ } 
-
-/**Returns the better of two guesses, as determined by scoreGuess and the rules for a 
- *tie-breaker that are described in part (b). 
- *Precondition: guess 1 and guess 2 contain all lowercase letters. 
- *guess1 is not the same as guess 2. 
- */ 
-public String findBetterGuess(String guess1, String guess2) 
-{  /*to be implemented in part(b)*/ } 
-
-}
-
 Write the WordMatch method scoreGuess. To determine the score to be returned, scoreGuess finds the number of times that guess occurs as a substring of secret and then multiplies that number by the square of the length of guess. Occurrences of guess may overlap within secret. 
 
 Assume that the length of guess is less than or equal to the length of secret and that guess is not an empty string. 
