@@ -30,6 +30,30 @@ class WordMatchTest {
     }
 
     @Test
+    void guessIsEmptyString() {
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> game1.scoreGuess(""));
+
+        String expectedMessage = "Your guess cannot be an empty String!";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+
+    }
+
+    @Test
+    void guessLengthExceedsSecretLength() {
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> game1.scoreGuess("mississippi river"));
+
+        String expectedMessage = "Your guess cannot exceed the number of characters in the Secret word";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+
+    }
+
+    @Test
     void scoreGuessOne() {
 
         assertEquals(4, game1.scoreGuess("i"));
